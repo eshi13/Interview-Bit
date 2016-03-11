@@ -1,5 +1,5 @@
 public class Solution {
-    public ArrayList<Integer> plusOne(ArrayList<Integer> a) {
+    public ArrayList<Integer> plusOne(ArrayList<Integer> A) {
         int size = A.size(), num, carry = 1;
         for(int i = size-1; i >= 0; --i) {
             num = A.get(i);
