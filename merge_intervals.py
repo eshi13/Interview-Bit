@@ -11,17 +11,13 @@ class Solution:
     def insert(self, intervals, new_interval):
     	if new_interval is None:
     		return None
-    	
-    	new_start = new_interval[0]
-    	new_end = new_interval[1]
-
-    	start_interval
-    	end_interval
+    	new_start = new_interval.start
+    	new_end = new_interval.end
+    	start_interval, end_interval = -1, -1
 
     	for i in xrange(len(intervals)):
-    		
-    		start = intervals[i[0]]
-    		end = interval[i[1]]
+    		start = intervals[i].start    		
+    		end = intervals[i].end
 
     		# fits inside existing intervals
     		if new_start >= start and new_start <= end:
@@ -30,21 +26,45 @@ class Solution:
     		if new_end >= start and new_end <= end:
     			end_interval = i
 
-    		# in between, make previous interval
-    		if start_interval is None and new_start < start:
-    			intervals[i-1[1]] = new_start
-    			start_interval = i-1
+    	if start_interval == -1 and end_interval == -1:
+    		start_interval = 0
+    		for i in xrange(len(intervals)):
+    			if new_start > intervals[i].end:
+    				start_interval = i+1
 
-    		if end_interval is None and new_end < start:
-    			intervals[i-1[1]] = new_end
-    			end_interval = i-1
-    	# merge
-    	if end_interval-start_interval > 0:
-    		intervals = self.merge(intervals, start_interval, end_interval)
-    def merge(self, intervals, start_interval, end_interval):
-    	for i in xrange(start_interval, end_interval+1):
-    		intervals.remove(i)
-    	intervals.insert(i, [start_interval, end_interval])
+			end_interval = len(intervals)-1
+    		for i in xrange(len(intervals)-1, -1, -1):
+    			if new_end < intervals[i].start:
+    				end_interval = i-1
+    		# merge
+    		for i in xrange(start_interval, end_interval+1):
+    			intervals.remove(start_interval)		# error right here
+    		# insert new interval
+    		intervals.insert(start_interval, new_interval)
+    		return intervals
+
+		if start_interval == -1:
+			for i in xrange(len(intervals)-1, -1, -1):
+				if new_start <= intervals[i].start:
+					start_interval = i
+		if end_interval == -1:
+			for i in xrange(len(intervals)):
+				if new_end >= intervals[i].end:
+					end_interval = i
+
+		new_start = min(intervals[start_interval].start, new_start)
+		new_end = max(intervals[end_interval].end, new_end)
+
+		intervals[start_interval].start = start
+		intervals[start_interval].end = end
+
+		# delete ones in between
+		for i in xrange(start_interval+1, end_interval+1):
+			intervals.remove(start_interval+1)
+
+		# insert 
+    	intervals.insert(start_interval, new_interval)
+    	return intervals
 """
 Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
 
