@@ -20,14 +20,14 @@ class Solution:
 
     	direction = CONST_RIGHT
 
-    	while(top <= bottom and left <= right):
+    	while top <= bottom and left <= right:
     		if direction == CONST_RIGHT:
-    			for i in xrange(left,right):
+    			for i in xrange(left,right+1):
     				result.append(A[top][i])
     			top += 1
 
     		elif direction == CONST_DOWN:
-    			for i in xrange(top,bottom):
+    			for i in xrange(top,bottom+1):
     				result.append(A[i][right])
     			right -= 1
 
