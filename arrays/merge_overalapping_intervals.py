@@ -11,7 +11,7 @@ class Solution:
     	intervals.sort(key=lambda interval: interval.start)
     	retIntervals = []
     	first = intervals[0].start
-    	end = intervals[0].end
+    	last = intervals[0].end
     	for i in xrange(1, len(intervals)):
     		if last > intervals[i].end:
     			# current interval overlaps with new one
