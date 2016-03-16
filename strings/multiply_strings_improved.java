@@ -75,6 +75,4 @@ Note2: Your answer should not have leading zeroes. For example, 00 is not a vali
 For example, 
 given strings "12", "10", your answer should be “120”.
 
-
-
 */
