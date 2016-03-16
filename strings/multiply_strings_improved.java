@@ -6,8 +6,13 @@ public class Solution {
 		int carry = 0, index = 0, num = 0;
 		char char_number;
 
-		if (remove_whitespace(a) || remove_whitespace(b))
+		int index_a = remove_whitespace(a);
+		int index_b = remove_whitespace(b);
+
+		if (index_a == -1 || index_b == -1)
 			return "0";
+		a = a.substring(index_a, a.length());
+		b = b.substring(index_b, b.length());
 
 		for (int i = a.length()-1; i >= 0; --i) {
 			int _a = a.charAt(i)-'0';
@@ -43,14 +48,13 @@ public class Solution {
 		return convert_to_string(res, i);
 	}
 
-	public boolean remove_whitespace(String a) {
+	public int remove_whitespace(String a) {
 		int i = 0;
-		while (i < 0 && a.charAt(i) == '0')
+		while (i < a.length() && a.charAt(i) == '0')
 			++i;
 		if (i == a.length())
-			return true;
-		a = a.substring(i, a.length());
-		return false;
+			return -1;
+		return i;
 	}
 	public int remove_whitespace(ArrayList<Character> res) {
 		int i = 0;
