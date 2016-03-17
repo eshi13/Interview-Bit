@@ -3,38 +3,34 @@ class Solution:
 	# @return a list of strings
 	def prettyJSON(self, A):
 		res = []
-		if A[0] == "{" and A[len(A)-1] == "}":
+		if len(A) == 0:
 			return res
-		tab = '\t'
+		tab = "\t"
 		num_tabs = 0;
 		string = ""
 		for c in A:
-			if (c == "{" or c == "["):
-				if string != "":
-					res.append(string)
+			if c != " ":
+				string += c
+
+			if c == "{" or c == "[":
+				if len(string) > 2 and string[-2] != "\t":
+					res.append(string[:-1])				# exclude last index = "{"
 				string = (tab * num_tabs) + c;
 				res.append(string)
 				num_tabs += 1
-				string = ""
-
-			elif c = ",":
-				string += c
-				res.append(string)
+				string = tab * num_tabs
 
 			elif c == "}" or c == "]":
-				if string != "":
-					res.append(string)
 				num_tabs -= 1
+				if len(string) > 2 and string[-2] != "\t":
+					res.append(string[:-1])
 				string = (tab * num_tabs) + c
-				res.append(string)
-				string = ""
 
-			else:
-				if string == "":
-					string = (num_tabs * tab) + c
-				else:
-					string += c
-		if string != "":
+			elif c == ",":
+				res.append(string)
+				string = tab * num_tabs
+			
+		if len(string) > 0 and string[-1] != "\t":
 			res.append(string)
 		return res
 
