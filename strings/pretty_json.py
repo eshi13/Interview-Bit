@@ -2,13 +2,43 @@ class Solution:
 	# @param A : string
 	# @return a list of strings
 	def prettyJSON(self, A):
-		if A[0] == "{" and A[len(A)-1] == "}":
 		res = []
+		if A[0] == "{" and A[len(A)-1] == "}":
+			return res
 		tab = '\t'
 		num_tabs = 0;
+		string = ""
 		for c in A:
-			if c == "{" or c == "[":
-				res.append(c)
+			if (c == "{" or c == "["):
+				if string != "":
+					res.append(string)
+				string = (tab * num_tabs) + c;
+				res.append(string)
+				num_tabs += 1
+				string = ""
+
+			elif c = ",":
+				string += c
+				res.append(string)
+
+			elif c == "}" or c == "]":
+				if string != "":
+					res.append(string)
+				num_tabs -= 1
+				string = (tab * num_tabs) + c
+				res.append(string)
+				string = ""
+
+			else:
+				if string == "":
+					string = (num_tabs * tab) + c
+				else:
+					string += c
+		if string != "":
+			res.append(string)
+		return res
+
+
 			
 """
 Pretty print a json object using proper indentation.
