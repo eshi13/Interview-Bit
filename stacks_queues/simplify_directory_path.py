@@ -5,13 +5,13 @@ class Solution:
 		stack = []
 		url = url.split('/')
 		for c in url:
-			if a == '..':
+			if c == '..':
 				if len(stack) > 0:
 					stack.pop()
-				elif a = '.':
-					continue
-				elif len(a) != 0:
-					stack.append(a)
+			elif c == '.':
+				continue
+			elif len(c) != 0:
+				stack.append(c)
 		return '/'+'/'.join(stack)
 
 
