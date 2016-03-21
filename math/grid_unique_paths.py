@@ -3,6 +3,8 @@ class Solution:
     # @param B : integer
     # @return an integer
     def uniquePaths(self, A, B):
+    	# (m + n - 2) C (n-1)
+    	# Combination order is not important
         return math.factorial(A+B-2)/(math.factorial(A-1)*math.factorial(B-1))
 """
 The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).
