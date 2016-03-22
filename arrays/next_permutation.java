@@ -33,7 +33,7 @@ public class Solution {
 	}
 
 	public void swap(ArrayList<Integer> A, int i, int j) {
-		int temp = A.get(j);
+		int temp = A.get(i);
 		A.set(i, A.get(j));
 		A.set(j, temp);
 	}
