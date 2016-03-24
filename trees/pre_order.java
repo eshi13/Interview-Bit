@@ -1,5 +1,4 @@
 /**
- * Iterative
  * Definition for binary tree
  * class TreeNode {
  *     int val;
@@ -13,13 +12,20 @@ public class Solution {
 		ArrayList<Integer> res = new ArrayList<Integer>();
 		Stack<TreeNode> stack = new Stack<>();
 
-		if (A == null)
+		if (a == null)
 			return res;
-		stack.push(A);
+		stack.push(a);
 		TreeNode node;
 
 		while (!stack.isEmpty()) {
-			
+			node = stack.pop();
+			res.add(node.val);
+
+			if (node.right != null)
+				stack.push(node.right);
+			if (node.left != null)
+				stack.push(node.left);
 		}
+		return res;
 	}
 }
