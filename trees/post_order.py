@@ -6,30 +6,27 @@
 #         self.left = None
 #         self.right = None
 class Solution:
-    # @param A : root node of tree
-    # @return a list of integers
-    def postorderTraversal(self, A):
-    	res = []
-    	stack = []
-    	if A is None:
-    		return res
-    	stack.insert(0, A)
-    	while len(stack):
-    		node = stack.pop()
-    		res.append(node.val)
-    		if node.left:
-    			stack.insert(0,node.left)
-    		if node.right:
-    			stack.insert(0,node.right)
-		return res.reverse()
+	# @param A : root node of tree
+	# @return a list of integers
+	def postorderTraversal(self, A):
+		res, stack1, stack2 = [], [], []
+		if A is None:
+			return None
+		stack1.append(A)
+		while len(stack1) != 0:
+			node = stack1.pop()
+			stack2.insert(0, node)
+
+			if node.left != None: 
+				stack1.insert(0, node.left)
+			if node.right != None:
+				stack1.insert(0, node.right)
+		while len(stack2) != 0:
+			node = stack2.pop()
+			res.append(node.val)
+		return res
 
 
 """
-2.1. pop an item from the stack and print it.
-
-2.2. push the left child of popped item to stack.
-
-2.3. push the right child of popped item to stack.
-
-reverse the ouput.
+2 stacks
 """
