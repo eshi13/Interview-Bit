@@ -1,10 +1,4 @@
-# Concept is there, see java for correct test cases
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+
 class Solution:
 	# @param A : root node of tree
 	# @return a list of integers
@@ -14,7 +8,7 @@ class Solution:
 			return None
 		stack1.append(A)
 		while len(stack1) != 0:
-			node = stack1.pop()
+			node = stack1.pop(0)
 			stack2.insert(0, node)
 
 			if node.left != None: 
@@ -22,7 +16,7 @@ class Solution:
 			if node.right != None:
 				stack1.insert(0, node.right)
 		while len(stack2) != 0:
-			node = stack2.pop()
+			node = stack2.pop(0)
 			res.append(node.val)
 		return res
 

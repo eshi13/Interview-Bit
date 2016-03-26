@@ -13,9 +13,9 @@ class Solution:
     	stack = []
     	if A is None:
     		return res
-    	stack.insert(0, A)
+    	stack.append(A)
     	while len(stack):
-    		node = stack.pop()
+    		node = stack.pop(0)
     		res.append(node.val)
     		if node.left != None:
     			stack.insert(0,node.left)
