@@ -12,7 +12,18 @@ class Solution:
     def buildTree(self, preorder, inorder):
     	if not inorder:
     		return None
-    	
+    	root_val = preorder[0]
+    	root_index = inorder.index(root_val)
+
+    	left_nodes = inorder[:root_index]
+    	right_nodes = inorder[root_index+1:]
+
+    	left_len,right_len = len(left_nodes), len(right_nodes)
+    	root = TreeNode(root_val)
+    	root.left = self.buildTree(preorder[1:left_len+1], left_nodes)
+    	root.right = self.buildTree(preorder[left_len+1:], right_nodes)
+
+    	return root
 
 
 """
