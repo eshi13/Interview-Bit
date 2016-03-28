@@ -38,7 +38,7 @@ Example :
 Input : 
 		 1
 		/ \
-	   2   3
+	       3   2
 
 Output : 
 	   [1, 2]
@@ -46,6 +46,6 @@ Output :
 Explanation : Swapping 1 and 2 will change the BST to be 
 		 2
 		/ \
-	   1   3
+	       3   1   
 which is a valid BST   
 */
