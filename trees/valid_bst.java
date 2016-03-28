@@ -9,22 +9,22 @@
  */
 public class Solution {
 	public int isValidBST(TreeNode root) {
-		if (root == null || !validBST(root))
+		if (!validBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE))
 			return 0;
 		else
 			return 1;
+		
 	}
 
-	public boolean validBST(TreeNode root) {
+	public boolean validBST(TreeNode root, int min, int max) {
 		if (root == null)
 			return true;
-		if (root.left.val > root.val)
-			return false;
-		if (root.right.val < root.val)
-			return false;
-		return validBST(root.left) && validBST(root.right);
+		return (min < root.val && root.val < max) &&
+				validBST(root.left, min, root.val) &&
+				validBST(root.right, root.val, max);
 	}
 }
+
 /*
 Given a binary tree, determine if it is a valid binary search tree (BST).
 
