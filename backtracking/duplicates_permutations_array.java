@@ -10,11 +10,11 @@ public class Solution {
 					l.add(j, a.get(i));
 					ArrayList<Integer> T = new ArrayList<Integer>(l);
 					l.remove(j);
-					System.out.print(T);
+
 					currentSet.add(T);
 				}
 			}
-			System.out.print(currentSet);
+
 			res = new ArrayList<ArrayList<Integer>>(currentSet);
 		}
 		return res;
