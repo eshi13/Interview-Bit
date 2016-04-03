@@ -3,15 +3,15 @@ class Solution:
 	# @param A : list of integers
 	# @return a list of list of integers
 	def permute(self, a):
-		result = []
-		self.permute_helper(a, 0, result)
-		return result
-	def permute_helper(self, a, start, result):
+		Solution.result = []
+		self.permute_helper(a, 0)
+		return Solution.result
+	def permute_helper(self, a, start):
 		if start == len(a)-1:
-			result.append(a)	# prints out correctly but result doesn't gett passed back in?
+			Solution.result.append(a)	# prints out correctly but result doesn't gett passed back in?
 		for i in xrange(start, len(a)):
 			a[start], a[i] = a[i], a[start]
-			self.permute_helper(a, start+1, result)
+			self.permute_helper(a, start+1)
 			a[start], a[i] = a[i], a[start]
 
 """
