@@ -32,7 +32,7 @@ public class Solution {
         for (int i = 0; i <= (curIndex - index); i++) {
             for (int j = 0; j < i; j++)
                 arr.add(A.get(index));
-            subset(A, arr, curIndex);
+            subset(A, arr, curIndex);     //
             for (int j = 0; j < i; j++)
                 arr.remove(arr.size() - 1);
         }
@@ -47,13 +47,13 @@ Elements in a subset must be in non-descending order.
 The solution set must not contain duplicate subsets.
 The subsets must be sorted lexicographically.
 Example :
-If S = [1,2,2], the solution is:
+If S = [0,2,2], the solution is:
 
 [
 [],
-[1],
-[1,2],
-[1,2,2],
+[0],
+[0,2],
+[0,2,2],
 [2],
 [2, 2]
 ]
