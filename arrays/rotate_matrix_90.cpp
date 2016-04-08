@@ -1,3 +1,6 @@
+/* Amount of layer/rotations is n/2
+	2 for loops (layer, first to last)
+*/
 class Solution {
 public:
      void rotate(vector<vector<int> > &matrix) {
