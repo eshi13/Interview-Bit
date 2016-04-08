@@ -1,9 +1,6 @@
-# Java version more intuitive
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+# if root.left, go down to its right most child (Node X)
+# attach everything from the right side to Node X
+# shift root.left over to root.right
 
 class Solution:
 	# @param A : root node of tree
