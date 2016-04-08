@@ -1,12 +1,4 @@
-/**
- * Definition for binary tree
- * class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
+/* preorder array of tree, node = queue.remove(), node = node.right */
 public class Solution {
 	public TreeNode flatten(TreeNode A) {
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
@@ -16,14 +8,11 @@ public class Solution {
 			return A;
 
 		TreeNode node = queue.remove();
-		TreeNode next;
 		A = node;
-
 		while (!queue.isEmpty()) {
-			next = queue.remove();
 			node.left = null;
-			node.right = next;
-			node = next;
+			node.right = queue.remove();
+			node = node.right;
 		}
 		return A;
 	}
@@ -38,3 +27,31 @@ public class Solution {
 		preorder(queue, node.right);
 	}
 }
+
+/*
+Given a binary tree, flatten it to a linked list in-place.
+
+Example :
+Given
+
+
+         1
+        / \
+       2   5
+      / \   \
+     3   4   6
+The flattened tree should look like:
+
+   1
+    \
+     2
+      \
+       3
+        \
+         4
+          \
+           5
+            \
+             6
+Note that the left child of all nodes should be NULL.
+*/
