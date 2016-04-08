@@ -16,7 +16,7 @@ class Solution:
 				stack.append(root)
 				root = root.left
 			else:
-				root = stack.pop()
+				root = stack.pop()	# removes last val
 				res.append(root.val)
 				root = root.right
 		return res

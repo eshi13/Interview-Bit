@@ -1,3 +1,4 @@
+/* Put bst inorder, sort inorder, compare both arrays */
 public class Solution {
 	public ArrayList<Integer> recoverTree(TreeNode root) {
 		ArrayList<Integer> res = new ArrayList<Integer>();
