@@ -1,9 +1,7 @@
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+# traverse through preorder, find root_index
+# left = inorder[:root_index], right = inorder[root_index+1:]
+# root.left = preorder[1:left+1], left
+# root.right = preorder[1left+1:], right
 
 class Solution:
     # @param preorder : list of integers denoting preorder traversal of tree
