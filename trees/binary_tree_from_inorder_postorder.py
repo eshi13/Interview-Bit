@@ -1,9 +1,4 @@
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+
 
 class Solution:
 	# @param inorder : list of integers denoting inorder traversal
@@ -19,7 +14,7 @@ class Solution:
 		leftNodes = inorder[:root_index]
 		rightNodes = inorder[root_index+1:]
 
-		# order matters
+		# order matters [left children -> right children], right goes first
 		root.right = self.buildTree(rightNodes, postorder)
 		root.left = self.buildTree(leftNodes, postorder)
 		

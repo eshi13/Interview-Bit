@@ -1,4 +1,7 @@
-
+# 2 stacks
+# stack1 for node, then right, left children
+# stack 2 = stack1.pop() (right child X) , then push X children onto stack 1
+# [ left children -> right children ], right goes first
 class Solution:
 	# @param A : root node of tree
 	# @return a list of integers
