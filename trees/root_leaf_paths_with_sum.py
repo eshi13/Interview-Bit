@@ -1,9 +1,4 @@
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+# see path_sum.py for more intuitive answer
 
 class Solution:
 		# @param root : root node of tree
