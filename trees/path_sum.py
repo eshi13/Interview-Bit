@@ -1,10 +1,5 @@
-# Definition for a  binary tree node
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
+# check if last item == left over value
+# subtract currentSum from current node val
 class Solution:
 	# @param A : root node of tree
 	# @param B : integer
@@ -17,6 +12,7 @@ class Solution:
 		return self.hasPathSum(A.left, B-A.val) or self.hasPathSum(A.right, B-A.val)
 
 """
+O(N)
 Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
 
 Example :
