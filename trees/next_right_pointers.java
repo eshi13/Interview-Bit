@@ -1,3 +1,8 @@
+/* 2 queue's, one for first level, one for second level
+  while either one of them are not empty, link to next item
+  set prev = null every time
+  when finished with first level, add children to queue 2
+ */
 /**
  * Definition for binary tree with next pointer.
  * public class TreeLinkNode {
@@ -22,7 +27,7 @@ public class Solution {
     			node = queue1.remove();
     			if (prev != null)
     				prev.next = node;
-    			prev = node;
+    			// prev = node;
     			if (node.left != null)
     				queue2.add(node.left);
     			if (node.right != null)
