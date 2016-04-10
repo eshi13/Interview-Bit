@@ -23,7 +23,7 @@ public class Solution {
 		else if (A.charAt(i) == '+')	// positive
 			++i;
 
-		while (i < n && A.chatAt(i) >= '0' && A.charAt(i) <= '9') {
+		while (i < A.length() && A.charAt(i) >= '0' && A.charAt(i) <= '9') {
 			num = Math.abs(num);
 			num = num * 10 + (A.charAt(i) - '0');
 
