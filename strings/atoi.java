@@ -1,9 +1,4 @@
-/**
- * Implement atoi to convert a string to an integer.
- * Input : "9 2704"
- * Output : 9
- */
-
+/* while num is between [0-9], num * 10 + A[i] */
 public class Solution {
 	public int atoi(final String A) {
 		int i = 0, length = A.length();
@@ -13,7 +8,7 @@ public class Solution {
 		while (i < length && A.charAt(i) == ' ')		// get rid of white space
 			++i;
 		
-		if (i == n)	
+		if (i == A.length())	
 			return 0;	// just have white space
 		
 		if (A.charAt(i) == '-') {		// negative
@@ -40,6 +35,9 @@ public class Solution {
 }
 
 /**
+ * Implement atoi to convert a string to an integer.
+ * Input : "9 2704"
+ * Output : 9
  * 24 ==> 0 * 10 + 2 ==> 2 * 10 + 4 = 24
  * If the number is positive and the current number is greater than MAX_INT/10, and you are about to append a digit, then certainly your number will overflow.
  * If the current number = MAX_INT / 10, then based on the last digit, we can detect if the number will overflow.

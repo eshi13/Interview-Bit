@@ -1,3 +1,5 @@
+# racecar vs. raccar, depending on positions,
+# for loop string, expand outwards from i,i or i,i+1
 class Solution:
 	# @param A : string
 	# @return a strings
