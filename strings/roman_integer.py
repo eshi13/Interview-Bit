@@ -1,3 +1,6 @@
+# dictionary {'I' : 1, 'V': 5}, 
+# IV less < greater, subtract I
+# VI greater > less, add I
 class Solution:
 	# @param A : string
 	# @return an integer

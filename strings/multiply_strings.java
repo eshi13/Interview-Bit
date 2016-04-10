@@ -1,4 +1,4 @@
-/* This solution doesn't take into account integeger overflow */
+/* This solution doesn't take into account integer overflow */
 public class Solution {
 	public String multiply(String a, String b) {
 		if (a == null || b == null)

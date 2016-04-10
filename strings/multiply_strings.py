@@ -1,5 +1,10 @@
 # Error -     num += int(res[currentIndex])
 # ValueError: invalid literal for int() with base 10: ''
+
+# 2 for loops, multiply last numbers against each other
+# currentIndex on A, index on B, add currentIndex val to res[currentIndex]
+# reverse res, ''.join(res[i:])
+
 class Solution:
 	# @param A : string
 	# @param B : string
@@ -13,12 +18,10 @@ class Solution:
 		carry, index = 0, 0
 
 		for i in xrange(len(A)-1, -1, -1):
-			_a = int(A[i])
 			num = 0
 			currentIndex = index
 			for j in xrange(len(B)-1, -1, -1):
-				_b = int(B[j])
-				num = _a * _b + carry
+				num = int(A[i]) * int(B[j]) + carry
 				carry = num / 10
 				num %= 10
 				char_number = chr(num)
