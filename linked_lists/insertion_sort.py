@@ -1,10 +1,5 @@
-# Needs Review
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
+# get previous node (the costly way)
+# 2 loops, check if A.val > A.next and swap them, from last index all the way to start
 class Solution:
 	# @param A : head node of linked list
 	# @return the head node in the linked list

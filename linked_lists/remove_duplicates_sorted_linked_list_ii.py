@@ -1,18 +1,19 @@
+# if A.val == A.next.val do another loop to see if it matches the current duplicate
 class Solution:
 	# @param A : head node of linked list
 	# @return the head node in the linked list
-	def deleteDuplicates(self, root):
+	def deleteDuplicates(self, A):
 		head = result = ListNode('dummy')
 
-		while root:
-			if root.next and root.val == root.next.val:
-				duplicate = root.val
-				while root and root.val == duplicate:
-					root = root.next
+		while A:
+			if A.next and A.val == A.next.val:
+				duplicate = A.val
+				while A and A.val == duplicate:
+					A = A.next
 			else:
-				head.next = root
+				head.next = A
 				head = head.next
-				root = root.next
+				A = A.next
 		head.next = None
 		return result.next
 """
