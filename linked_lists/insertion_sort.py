@@ -13,13 +13,13 @@ class Solution:
 			return A
 		res = ListNode(0)
 		res.next = A
-		while A.next:
+		while A.next:				# find the last element
 			A = A.next
 		prev = self.getPrev(res, A)
 		while prev:
 			temp = prev
 			while (A.next and A.val > A.next.val):
-				self.exchange(prev, A, A.next)	# A moves to next position
+				self.exchange(prev, A, A.next)	# to be prev, node.next, node, returning A (which moves back one)
 				prev = prev.next
 			A = temp
 			prev = self.getPrev(res, A)
