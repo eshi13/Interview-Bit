@@ -1,3 +1,7 @@
+# add character
+# { - add everything before {, add next string increase tabs
+# } - add everything before }, add next string decrease tabs
+# , - add string, set string to same num tabs
 class Solution:
 	# @param A : string
 	# @return a list of strings
