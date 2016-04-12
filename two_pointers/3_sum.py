@@ -1,3 +1,8 @@
+# sort
+# [0,1, .. len(A)-1]
+# [i, j, .. k]
+# sum = A[i]+A[j]+A[k]
+# sum < target, j++ else k--
 class Solution:
 	# @param A : list of integers
 	# @param B : integer

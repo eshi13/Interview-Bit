@@ -1,3 +1,7 @@
+# min = min(A[i], B[j], C[k])
+# max = max(A[i], B[j], C[k])
+# if diff == 0, return diff
+# if min == A[i], ++i, etc. etc.
 class Solution:
 	# @param A : tuple of integers
 	# @param B : tuple of integers
