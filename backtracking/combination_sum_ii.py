@@ -1,3 +1,5 @@
+# DFS recursion function
+# inside a for loop from i - end, 0-end, 1-end, 2-end
 class Solution:
 	# @param A : list of integers
 	# @param B : integer
