@@ -1,10 +1,11 @@
+# ( i shift right ) XOR i
 class Solution:
 	# @param A : integer
 	# @return a list of integers
 	def grayCode(self, A):
 		res = []
 		for i in xrange(2**A):		# 2 ^ A
-			res.append( (i >> 1)^i )	# x shifted right by n bits
+			res.append( (i >> 1)^i )	# x shifted right by n bits, ^ = XOR
 		return res
 """
 i = 4
