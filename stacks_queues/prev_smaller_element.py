@@ -1,3 +1,5 @@
+# stack, add every single item
+# check if stack[0] >= A[i], pop from stack
 class Solution:
 	# @param arr : list of integers
 	# @return a list of integers
@@ -6,9 +8,9 @@ class Solution:
 		stack = []
 
 		for i in xrange(len(A)):
-			while (len(stack) != 0 and stack[0] >= A[i]):
+			while len(stack) != 0 and stack[0] >= A[i]:
 				stack.pop(0)
-			if (len(stack) == 0):
+			if len(stack) == 0:
 				res[i] = -1
 			else:
 				res[i] = stack[0]
