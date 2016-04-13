@@ -1,4 +1,5 @@
 # Concept, doesn't pass
+# for loop - swap (start,i), then permute [i-end], swap(start,i)
 class Solution:
 	# @param A : list of integers
 	# @return a list of list of integers
