@@ -1,3 +1,5 @@
+# 2 for loops, one for every int, one for every item in result
+# [] [1] | [] + [2], [1] + [2]
 class Solution:
 	# @param A : list of integers
 	# @return a list of list of integers
