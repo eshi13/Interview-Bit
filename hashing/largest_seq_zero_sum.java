@@ -1,3 +1,4 @@
+/* sum[j] = sum[i-1] */
 public class Solution {
     public ArrayList<Integer> lszero(ArrayList<Integer> A) {
     	ArrayList<Integer> res = new ArrayList<Integer>();

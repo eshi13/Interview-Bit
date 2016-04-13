@@ -6,34 +6,25 @@
 #         self.random = None
 
 class Solution:
-	def copyRandomList(self, head):
-		memory = {}
+	def copyRandomList(self, root):
+		d = dict()
+		A = root
+		_A, _root = None, None
 
-		root = RandomListNode(head.label)
+		while A:
+			_A = RandomListNode(A.label)
+			if _root == None:
+				_root = _A
+			d[A] = _A
+			A = A.next
+		for key, val in d.iteritems():
+			_A = val
+			if key.next != None:
+				_A.next = d[key.next]
+			if key.random != None:
+				_A.random = d[key.random]
 
-		curr = head.next
-		prev = root
-
-		memory[head] = root
-
-		while curr:
-			node = RandomListNode(curr.label)
-			memory[curr] = node
-			prev.next = node
-
-			curr = curr.next
-			prev = prev.next
-
-		curr = head
-		prev = root
-
-		while curr:
-			if curr.random:
-				prev.random = memory[curr.random]
-			curr = curr.next
-			prev = prev.next
-
-		return root
+		return _root
 
 """
 A linked list is given such that each node contains an additional random pointer which could point to any node in the list or NULL.

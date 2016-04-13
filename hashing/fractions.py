@@ -1,3 +1,6 @@
+# (remainder % denominator) * 10
+# keep remainder in a dictionary
+# d[.2525] = len(res), so you can insert () later
 class Solution:
 	# @param numerator : integer
 	# @param denominator : integer
