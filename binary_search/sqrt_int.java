@@ -1,3 +1,7 @@
+/* 70/8 != 8, but closest thing is 8
+ add extra variable if (mid <= a/mid) root = mid, low = mid+1
+*/
+
 public class Solution {
 	public int sqrt(int a) {
 		int low = 1;
@@ -11,8 +15,8 @@ public class Solution {
 			if (mid == a/mid)
 				return mid;
 			if ( mid <= a/mid) {
-				root = mid;
-				low = mid +1;
+				root = mid;		// if it's not perfect, return floor
+				low = mid +1;	
 			}
 			else
 				high = mid-1;
