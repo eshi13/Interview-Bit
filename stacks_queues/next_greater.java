@@ -1,4 +1,3 @@
-
 public class Solution {
 	public ArrayList<Integer> nextGreater(ArrayList<Integer> a) {
 		int[] res = new int[a.size()];
