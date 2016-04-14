@@ -49,5 +49,4 @@ public class Solution {
 	and target value 8,
 	return [3, 4].
 
-	// Note - interview bit doesn't compile with this comment
 */

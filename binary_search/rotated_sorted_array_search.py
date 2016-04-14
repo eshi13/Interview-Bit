@@ -1,3 +1,5 @@
+# find the min, do binary search from [0..min] and [min..len(A)-1]]
+# when finding min, A[mid]<A[end] and A[mid] > A[end]
 class Solution:
 	# @param A : tuple of integers
 	# @param B : integer
