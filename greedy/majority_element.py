@@ -1,3 +1,5 @@
+# traverse through 1 for loop, if A[majorityIndex] == A[i] ++count else --count
+# set majorityIndex to i if count == 0
 class Solution:
 	# @param A : tuple of integers
 	# @return an integer

@@ -1,3 +1,4 @@
+// However many times you can divide by 5
 public class Solution {
 	public int trailingZeroes(int a) {
 		int num_zeroes = 0;

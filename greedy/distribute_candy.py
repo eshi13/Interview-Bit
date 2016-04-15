@@ -1,3 +1,5 @@
+# traverse forwards, check if [i] > [i-1]
+# traverse backwards, check if [i] > [i+1], take max of candies[i] or [i+1]
 class Solution:
 	def candy(self, ratings):
 		candies = [1] * len(ratings)
@@ -5,11 +7,10 @@ class Solution:
 		for i in xrange(1, len(ratings)):
 			if ratings[i] > ratings[i-1]:
 				candies[i] = candies[i-1]+1
-		for i in reversed(xrange(len(ratings)-1)):
+		for i in xrange(len(ratings)-2,-1,-1):
 			if ratings[i] > ratings[i+1]:
-				candies[i] = max(candies[i], candies[i+1]+1)
+				candies[i] = max(candies[i],candies[i+1]+1)
 		return sum(candies)
-
 """
 There are N children standing in a line. Each child is assigned a rating value.
 
