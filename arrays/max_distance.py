@@ -2,14 +2,24 @@ class Solution:
 	# @param A : tuple of integers
 	# @return an integer
 	def maximumGap(self, A):
-		maxDistance = 0
-		for i in xrange(len(A)):
+		res = -1
+		right_max, left_min = [0]*len(A), [0]*len(A)
+		left_min[0] = A[0]
+		right_max[len(A)-1] = A[len(A)-1]
 
-			for j in xrange(i+1,len(A)):
-				if A[i] <= A[j]:
-					distance = j-i
-					maxDistance = max(maxDistance,distance)
-			return maxDistance
+		for i in xrange(1, len(A)):
+			left_min[i] = min(left_min[i-1], A[i])
+		for i in xrange(len(A)-2, -1, -1):
+			right_max[i] = max(right_max[i+1], A[i])
+
+		i = j = 0
+		while i < len(A) and j < len(A):
+			if left_min[i] <= right_max[j]:
+				res = max(res, j-i)
+				j += 1
+			else:
+				i += 1
+		return res
 
 
 
