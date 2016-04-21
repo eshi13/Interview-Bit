@@ -20,7 +20,7 @@ class Solution:
 			if sum(A[len(B):]) > 0:
 				return 1
 		if len(A) < len(B):
-			if sum(B[lenA:]) > 0:
+			if sum(B[len(A):]) > 0:
 				return -1
 		return 0
 
