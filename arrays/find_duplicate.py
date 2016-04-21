@@ -1,0 +1,30 @@
+class Solution:
+	# @param A : tuple of integers
+	# @return an integer
+	def repeatedNumber(self, A):
+		if len(A) <= 1:
+			return -1
+		value_range = len(A)-1		# valuerange
+		_range = int(value_range**0.5) 	# sqrt(n)	range
+		if _range*_range < value_range:
+			_range += 1
+		hash_len = _range+1
+		d = [0]*hash_len
+		for i in xrange(len(A)):
+			d[ (A[i]-1)/_range ]	+= 1
+
+
+
+"""
+Given a read only array of n + 1 integers between 1 and n, 
+find one number that repeats in linear time using less then O(n) space 
+and traversing the stream sequentially O(1) times.
+
+Sample Input:
+
+[3 4 1 4 1]
+Sample Output:
+
+1
+If there are multiple possible answers ( like in the sample case above ), output any one.
+"""
