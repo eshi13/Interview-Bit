@@ -3,9 +3,9 @@ class Solution:
 	# @return a strings
 	def convertToTitle(self, A):
 		res = ""
-		while A >=0 :
-			res.append(str((A-1)/ 26))+1)
-			A %= 26
+		while A != 0:
+			res = chr( (A-1) % 26 + ord('A')) + res
+			A = (A-1)/26
 		return res
 
 """

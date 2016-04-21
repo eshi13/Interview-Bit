@@ -31,9 +31,9 @@ class Solution:
 			for i in xrange(col):
 				A[0][i] = 0
 		if colFlag:
-			for i in xrange(row);
-			A[i][0] = 0
-	return A
+			for i in xrange(row):
+				A[i][0] = 0
+		return A
 
 
 
