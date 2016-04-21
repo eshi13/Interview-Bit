@@ -2,17 +2,25 @@ class Solution:
 	# @param A : tuple of integers
 	# @return a list of integers
 	def repeatedNumber(self, A):
-		sum_A, sum_A2, n = 0,0,0
-		for a in A:
-			sum_A2 += a*a
-			sum_A += a
-			n += 1
-		sum_N = n*(n+1)/2
+		_sum = squareSum = 0
+		res = []
+		for i in xrange(len(A)):
+			temp = A[i]
+			_sum += temp
+			_sum -= i+1
+			squareSum += temp*temp
+			squareSum -= (i+1)*(i+1)
 
-		res_A = sum_N - sum_A
-		res_B = (sum_N * (2*n+1)/3 - sum_A2) / res_A
-		x = (res_B - res_A)/2
-		return [x, x+res_A] 
+		# sum = A - B
+       	# squareSum = A^2 - B^2 = (A - B)(A + B)
+       	# squareSum / sum = A + B
+		squareSum /= _sum
+
+		A = int( (_sum+squareSum) / 2)
+		B = squareSum - A
+		res.append(A)
+		res.append(B)
+		return res
 """
 
 You are given a read only array of n integers from 1 to n.
