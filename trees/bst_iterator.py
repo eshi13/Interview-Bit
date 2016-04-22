@@ -8,17 +8,17 @@ class BSTIterator:
 			self.path.append(A)
 			A = A.left
 	# @return a boolean, whether we have a next smallest number
-    def hasNext(self):
-    	return len(self.path) != 0
-    # return an integer, the next smallet number
-    def next(self):
-    	res = self.path.pop()
-    	if res.right:
-    		A = res.right
-    		while A:
-    			self.path.append(A)
-    			A = A.left
-    	return res.val
+	def hasNext(self):
+		return len(self.path) != 0
+	# return an integer, the next smallet number
+	def next(self):
+		res = self.path.pop()
+		if res.right:
+			A = res.right
+			while A:
+				self.path.append(A)
+				A = A.left
+		return res.val
 """
 Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
 
