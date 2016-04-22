@@ -1,5 +1,5 @@
 # even node.next = a[i/2]
-# odd node.next = a[length-1-i/2]
+# odd node.next = a[length-1-i]
 
 class Solution:
 	# @param A : head node of linked list
