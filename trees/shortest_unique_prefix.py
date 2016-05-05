@@ -7,7 +7,7 @@ class Solution:
 			node = tree
 			node[0] += 1
 			for c in s:
-				node = node[1].setdefault(c, [0, dict()])
+				node = node[1].setdefault(c, [0, dict()] )
 				node[0] += 1
 		res = []
 		for s in A:
