@@ -8,22 +8,22 @@ class Solution:
 			if a == '+' or a == '-' or a == '/' or a == '*':
 				if len(stack) < 2:
 					return 0
-			second = stack.pop()
-			first = stack.pop()
-			if a == '+':
-				res = first + second
-				stack.append(res)
-			elif a == '-':
-				res = first-second
-				stack.append(res)
-			elif a == '*':
-				res = first * second
-				stack.append(res)
-			elif a == '/':
-				res = first/second
-				stack.append(ret)
-		else:
-			stack.append(int(a))
+				second = stack.pop()
+				first = stack.pop()
+				if a == '+':
+					res = first + second
+					stack.append(res)
+				elif a == '-':
+					res = first-second
+					stack.append(res)
+				elif a == '*':
+					res = first * second
+					stack.append(res)
+				elif a == '/':
+					res = first/second
+					stack.append(res)
+			else:
+				stack.append(int(a))
 		if len(stack) == 1:
 			return stack[0]
 		else:
