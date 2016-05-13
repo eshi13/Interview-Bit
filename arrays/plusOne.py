@@ -13,7 +13,7 @@ class Solution:
         if temp > 0:
             A = [temp] + A
         i = 0
-        while i < len(A):
+        while i < len(A):   # get rid of 00000123
             if A[i] > 0:
                 break
             i += 1

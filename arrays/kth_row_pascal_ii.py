@@ -9,11 +9,11 @@ class Solution:
 	
 		for i in xrange(1, numRows):
 			currentRow, prevRow = prevRow, currentRow
-			self.insert(res[currentRow], 0, 1)
+			self.insert(res[currentRow], 0, 1)							# first item
 
-			for j in xrange(0, len(res[prevRow])-1):
+			for j in xrange(0, len(res[prevRow])-1):					# in between
 				self.insert(res[currentRow], j+1, res[prevRow][j] + res[prevRow][j+1])
-			self.insert(res[currentRow], len(res[prevRow])-1, 1)
+			self.insert(res[currentRow], len(res[prevRow])-1, 1)		# last item
 		return res[currentRow]
 
 	def insert(res, index, val):

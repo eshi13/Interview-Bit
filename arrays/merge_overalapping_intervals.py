@@ -20,7 +20,7 @@ class Solution:
     			retIntervals.append(Interval(first, last))
     			first = intervals[i].start
     			last = intervals[i].end
-    		else:
+    		else:                           # in between, last >= interval.start, last <= interval.end
     			last = intervals[i].end
     	retIntervals.append(Interval(first, last))
     	return retIntervals

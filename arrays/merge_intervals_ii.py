@@ -17,11 +17,9 @@ class Solution:
     	if newInterval.start > intervals[-1].end:
     		# After intervals, no overlap
     		return intervals + [newInterval]
-        i = -1
-        j = -1
-        left = 0
-        right = len(intervals)-1
-        while left <= right:
+        i, j = -1, -1
+        left, right = 0, len(intervals)-1
+        while left <= right:                    # binary for start
         	mid = left + (right-left)/2
         	if intervals[mid].start < newInterval.start:
         		left = mid
@@ -36,9 +34,8 @@ class Solution:
         		break
         if i == -1:
         	i = left
-        left = 0
-        right = len(intervals)-1
-        while left <= right:
+        left, right = 0, len(intervals)-1
+        while left <= right:                    # binary for end
         	mid = left + (right-left)/2
         	if intervals[mid].start < newInterval.end:
         		left = mid

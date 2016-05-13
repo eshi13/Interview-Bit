@@ -8,8 +8,8 @@ class Solution:
 			return res
 		for i in xrange(2, A+1):
 			res.append([0]*i)
-			res[i-1][0] = 1
-			res[i-1][-1] = 1
+			res[i-1][0] = 1 		# 1st item 1
+			res[i-1][-1] = 1 		# last item 1
 			for j in xrange(1, i-1):
 				res[i-1][j] = res[i-2][j-1] + res[i-2][j]
 		return res[-1]
