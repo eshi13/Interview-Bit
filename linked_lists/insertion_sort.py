@@ -19,6 +19,7 @@ class Solution:
 			A = temp
 			prev = self.getPrev(res, A)
 		return res.next
+		
 	def exchange(self, prev, node, next):
 		if prev:
 			prev.next = next
